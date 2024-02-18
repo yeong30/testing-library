@@ -1,9 +1,5 @@
 function App() {
-  return (
-    <div>
-      <h1>I'm gonna learn React Testing Library</h1>
-    </div>
-  );
+  return <button className="red">change to blue</button>;
 }
 
 export default App;
