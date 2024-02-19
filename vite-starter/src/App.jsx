@@ -1,5 +1,15 @@
+import { useState } from "react";
+
 function App() {
-  return <button className="red">change to blue</button>;
+  const [btnColor, setBtnColor] = useState("red");
+
+  const nextColor = btnColor === "red" ? "blue" : "red";
+
+  return (
+    <button className={btnColor} onClick={() => setBtnColor(nextColor)}>
+      change to {nextColor}
+    </button>
+  );
 }
 
 export default App;
