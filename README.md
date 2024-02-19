@@ -48,3 +48,4 @@
 - ex) getByRole, getByLabelText , getByPlaceholderText ...
 - getByTestId는 변경되지않는 값으로 개발자에는 좋지만 사용자가 앱과 상호작용하는데 사용하는것이 아니므로 앱테스트에는 그다지 안정적이지 않음
 - 따라서 역할로 작업하는것에 익숙해지면 접근성에 익숙해진다. 테스트에서 찾을 수 없는 요소는 동시에 접근성이 떨어지는 요소이다.
+- 만약 페이지내 요소의 역할을 확인하고 싶다면 core API의 logRoles를 사용한다,
