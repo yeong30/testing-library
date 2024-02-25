@@ -39,19 +39,19 @@ test("popover responds to hover", async () => {
   const user = userEvent.setup();
   //Check inital status. popover is disappers;
 
+  render(<OrderSummaryForm />);
   const nullPopover = screen.queryByText(/실제 아이스크림은 배달되지 않습니다/i);
 
   // expect(nullPopover).toBeNull();
   expect(nullPopover).not.toBeInTheDocument();
 
-  //Check popover appears on mouseover
+  //Check popover appears on mouse over
   const termsAndConditions = screen.getByText(/약관/i);
-
-  user.hover(termsAndConditions);
-  const popover = screen.queryByText(/실제 아이스크림은 배달되지 않습니다/i);
+  await user.hover(termsAndConditions);
+  const popover = screen.getByText(/제 아이스크림은 배달되지 않습니다/i);
   expect(popover).toBeInTheDocument();
 
-  user.unhover(termsAndConditions);
+  //Check popover disappears on mouse out
+  await user.unhover(termsAndConditions);
   expect(popover).not.toBeInTheDocument();
-  //Check popover disappears on mouseout
 });
