@@ -10,16 +10,14 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:testing-library/react",
     "plugin:vitest/recommended",
+    "plugin:jest-dom/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
-  plugins: ["react-refresh"],
+  plugins: ["react-refresh", "testing-library", "jest-dom"],
   rules: {
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
+    "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
   },
   globals: {
     ...vitest.environments.env.globals,
