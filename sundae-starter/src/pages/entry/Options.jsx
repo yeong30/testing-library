@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import ScoopsOption from "./ScoopsOption";
+import ToppingOption from "./ToppingOption";
 
 function Options({ optionType }) {
   const [items, setItems] = useState([]);
@@ -17,7 +18,7 @@ function Options({ optionType }) {
     loadScoopOptions();
   }, []);
 
-  const OptionItem = optionType === "scoops" ? ScoopsOption : null;
+  const OptionItem = optionType === "scoops" ? ScoopsOption : ToppingOption;
 
   return (
     <div>
